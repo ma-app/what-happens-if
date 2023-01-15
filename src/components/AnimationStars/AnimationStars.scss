@@ -1,0 +1,50 @@
+@function multiple-box-shadow($n) {
+  $value: "#{random(4000)-2000}px #{random(4000)-2000}px #fff";
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(4000)-2000}px #{random(4000)-2000}px #fff";
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(2000);
+$shadows-medium: multiple-box-shadow(1000);
+$shadows-big: multiple-box-shadow(300);
+
+.stars {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+
+  &.one {
+    width: 1px;
+    height: 1px;
+    box-shadow: $shadows-small;
+    animation: stars 50s infinite linear;
+    // animation: showAndHide 3s infinite linear;
+  }
+
+  &.two {
+    width: 2px;
+    height: 2px;
+    box-shadow: $shadows-medium;
+    animation: stars 100s infinite linear;
+  }
+
+  &.three {
+    width: 3px;
+    height: 3px;
+    box-shadow: $shadows-big;
+    animation: stars 150s infinite linear;
+  }
+}
+
+@keyframes stars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}

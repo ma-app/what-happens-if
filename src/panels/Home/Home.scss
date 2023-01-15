@@ -1,0 +1,68 @@
+// @mixin rain($left) {
+
+// }
+
+.admin-btn {
+  width: 150px;
+  height: 30px;
+  background-color: #4dbbe2;
+  border-radius: 15px;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+}
+
+.rain-container {
+  position: absolute;
+
+  .rain-anim {
+    color: red;
+  }
+}
+
+.spinner {
+  animation: 1s spin linear infinite;
+  width: 90px;
+  height: 90px;
+  color: #0afff4;
+}
+
+.pulse {
+  transition: 1s ease;
+  animation: 3s pulse-slow ease infinite;
+  color: red !important;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 0.3;
+  }
+}
