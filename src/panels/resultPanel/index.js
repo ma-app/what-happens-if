@@ -64,7 +64,6 @@ const ResultPanel = ({
   };
 
   const handleDownload = (url, filename = "Свидетельство.jpg") => {
-    console.log("url", url);
     axios
       .get(url, {
         responseType: "blob",
@@ -117,13 +116,13 @@ const ResultPanel = ({
           </Button>
         </a>
       </div>
-      <ResultModal
+      {/* <ResultModal
         setIsModalVisible={setIsModalVisible}
         isModalVisible={isModalVisible}
         showModal={showModal}
         notifyLinks={notifyLinks}
         success={success}
-      />
+      /> */}
 
       {/* <Modal
         title="Кол-во сообщений и шагов за 2022г"
